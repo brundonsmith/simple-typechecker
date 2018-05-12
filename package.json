@@ -1,0 +1,16 @@
+{
+  "name": "simple-typechecker",
+  "version": "1.0.0",
+  "description": "Check a JavaScript object against a JSON schema, with a single function call",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "schema",
+    "json",
+    "typechecker"
+  ],
+  "author": "Brandon Smith",
+  "license": "ISC"
+}
