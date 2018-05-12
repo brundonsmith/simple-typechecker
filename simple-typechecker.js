@@ -1,5 +1,6 @@
-
-import { exists } from './misc';
+function exists(val) {
+  return typeof val !== 'undefined' && val !== null;
+}
 
 /*
   Takes a javascript object of data and another javascript object describing a
@@ -21,7 +22,7 @@ import { exists } from './misc';
   That last one is weird. It mixes metaphors a little bit, but it allows for
   complete representation without massively complicating the spec structure.
 */
-export function check(obj, type, objName = 'object') {
+function check(obj, type, objName = 'object') {
   var errorMessages = getErrorMessages(obj, type);
   errorMessages.forEach(message => console.assert(!exists(message), objName + message))
   return obj;
@@ -83,3 +84,5 @@ function getErrorMessages(val, type) {
 
   return [];
 }
+
+module.exports = check;
