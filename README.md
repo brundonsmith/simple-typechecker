@@ -2,6 +2,8 @@
 
 ### Usage
 ```javascript
+const check = require('simple-typechecker');
+
 var UserListSchema = {
   "users": [
     {
