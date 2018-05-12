@@ -12,5 +12,6 @@
     "typechecker"
   ],
   "author": "Brandon Smith",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": "git@github.com:brundonsmith/simple-typechecker.git"
 }
