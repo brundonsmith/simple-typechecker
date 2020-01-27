@@ -57,9 +57,8 @@ In most projects, the server-side language and/or the DB have strict types
 already. In those cases, you probably don't need this.
 
 This utility is for those of us who deal with a loosely-typed server language
-(in my case, Common Lisp) and a loosely-structured data source (in my case...
-also Lisp. yeah.) It will spot data problems the moment they hit the browser,
-and can save hours of debugging.
+(in my case, Common Lisp) and/or a loosely-structured data source. It will spot 
+data problems the moment they hit the browser, saving debugging time.
 
 ### How to use it
 Each value in the schema, be it the root value (usually an object, but not
