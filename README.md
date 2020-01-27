@@ -56,9 +56,14 @@ prints informative errors to the console for every discrepancy.
 In most projects, the server-side language and/or the DB have strict types
 already. In those cases, you probably don't need this.
 
-This utility is for those of us who deal with a loosely-typed server language
-(in my case, Common Lisp) and/or a loosely-structured data source. It will spot 
-data problems the moment they hit the browser, saving debugging time.
+This utility is for when your code handles external data that lives outside of any 
+static type system, whether because you make requests to a loosely-typed server language,
+load user-supplied JSON files, or whatever. It will spot 
+data problems the moment they hit your code, saving debugging time.
+
+Alternatives like JSON Schema (https://json-schema.org/) exist, but they tend to be
+verbose. This library aims to be simple and practical instead of 100% comprehensive; 
+your schemas look like your data itself.
 
 ### How to use it
 Each value in the schema, be it the root value (usually an object, but not
@@ -107,7 +112,7 @@ var UserListSchema = {
 
 ### Tips
 - The schemas can be fully represented as JSON, which means they could be
-stored in their own JSON files or even in a Mongo database or be sent over HTTP.
+stored in their own JSON files or even in a database.
 - Schemas can be arbitrarily deep and complex. There's no reason that
 ```json
 "favoriteColor": [ "string", null ]
@@ -126,7 +131,7 @@ couldn't have been
     null
   ]
 ```
-- Use these schemas to define a contract between your server- and client-side
-code, in the absence of a true type system. You can put in writing, "this is
+- You can use these schemas to define a contract between your server- and client-side
+code, when a static type system isn't available on the back-end. You can put in writing, "this is
 what my code works with", and if the server deviates from that, you'll
-immediately know that that was the reason things broke.
+at least know that that was the reason things broke.
